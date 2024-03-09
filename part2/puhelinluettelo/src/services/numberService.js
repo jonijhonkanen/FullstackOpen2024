@@ -1,0 +1,32 @@
+import axios from 'axios';
+const baseUrl = 'http://localhost:3001/persons';
+
+const getAll = () => {
+  const request = axios.get(baseUrl);
+  return request.then((response) => response.data);
+};
+
+const create = (newObject) => {
+  const request = axios.post(baseUrl, newObject);
+  return request.then((response) => response.data);
+};
+
+const update = (id, newObject) => {
+  //console.log(`Updating item ${baseUrl}/${id}`);
+  const request = axios.put(`${baseUrl}/${id}`, newObject);
+  return request.then((response) => response.data);
+};
+
+const remove = (id) => {
+  //console.log(`Remove item ${baseUrl}/${id}`);
+  return axios.delete(`${baseUrl}/${id}`);
+};
+
+const serviceFunctions = {
+  getAll,
+  create,
+  update,
+  remove,
+};
+
+export default serviceFunctions;
