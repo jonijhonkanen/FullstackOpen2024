@@ -1,5 +1,4 @@
 import Course from './components/Course';
-import Header from './components/Header';
 
 const App = () => {
   const courses = [
@@ -49,7 +48,7 @@ const App = () => {
 
   return (
     <div>
-      <Header name="Web development curriculum" />
+      <h1>Web development curriculum</h1>
       <Course course={courses} />
     </div>
   );

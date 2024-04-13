@@ -16,10 +16,20 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const getData = () => {
-    numberService.getAll().then((initialNumbers) => {
-      //console.log('promise fulfilled');
-      setPersons(initialNumbers);
-    });
+    numberService
+      .getAll()
+      .then((initialNumbers) => {
+        //console.log('promise fulfilled');
+        setPersons(initialNumbers);
+      })
+      .catch((error) => {
+        console.log('Error while loading initial data!');
+        console.log(error);
+        renderMessage({
+          message: 'Error while loading initial data!',
+          type: 'error',
+        });
+      });
   };
 
   useEffect(() => {
@@ -48,7 +58,7 @@ const App = () => {
       numberService
         .create(nameObject)
         .then((data) => {
-          console.log('Response from server', data);
+          //console.log('Response from server', data);
           setPersons(persons.concat(data));
         })
         .then(() => {
@@ -77,7 +87,7 @@ const App = () => {
           .update(persons.find((item) => item.name === newName).id, nameObject)
           .then((data) => {
             //Update message
-            console.log(data);
+            //console.log(data);
             //Update object's number (is the object's id match with the response id? if so, update object's number)
             //Set updated array for persons
             setPersons(
@@ -134,7 +144,10 @@ const App = () => {
           setPersons(deleteArray);
         })
         .then(() => {
-          renderMessage({ message: `Number removed!`, type: 'success' });
+          renderMessage({
+            message: `${name}'s number removed!`,
+            type: 'success',
+          });
         })
         .catch((error) => {
           console.log(error);
