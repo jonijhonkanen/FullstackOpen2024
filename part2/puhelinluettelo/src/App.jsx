@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     //console.log('effect');
     getData();
-  }, []);
+  });
 
   //Handle input field
   const handleNameChange = (event) => {

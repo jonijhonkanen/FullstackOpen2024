@@ -44,6 +44,15 @@ const App = () => {
         },
       ],
     },
+    {
+      name: 'Javascript',
+      id: 3,
+      parts: [
+        { name: 'Classes', exercises: 8, id: 1 },
+        { name: 'Functions', exercises: 9, id: 2 },
+        { name: 'References and this', exercises: 11, id: 3 },
+      ],
+    },
   ];
 
   return (

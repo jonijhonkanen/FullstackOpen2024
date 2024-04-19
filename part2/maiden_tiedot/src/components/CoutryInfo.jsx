@@ -19,7 +19,7 @@ const CountryInfo = ({ data, weather }) => {
         <div>
           <h2>Weather in {capital[0]}</h2>
           <p>temperature {temperature} Celsius</p>
-          <img className="weatherIcon" src={iconURL}></img>
+          <img className="weatherIcon" src={iconURL} width="80" />
           <p>wind {wind} m/s</p>
         </div>
       )}

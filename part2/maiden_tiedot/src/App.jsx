@@ -102,7 +102,7 @@ const App = () => {
       : countryData &&
         countryWeather &&
         countriesToShow.length > 1 &&
-        countriesToShow.length < 11
+        countriesToShow.length < 251
       ? resetWeather()
       : null;
 

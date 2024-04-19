@@ -26,9 +26,14 @@
       "number": "045-1234567"
     },
     {
-      "name": "Tero Testi",
-      "number": "044-67547357",
-      "id": "01be"
+      "name": "Tero Kauppi",
+      "number": "045-24356758",
+      "id": "8d58"
+    },
+    {
+      "id": "3e17",
+      "name": "Joonas Jokinen",
+      "number": "045-785832"
     }
   ]
 }
